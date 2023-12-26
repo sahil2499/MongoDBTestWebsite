@@ -1,0 +1,67 @@
+<!-- views/tools.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools</title>
+  <!-- Include Bootstrap from CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background: url('https://source.unsplash.com/1920x1080/?warehouse') center center fixed;
+      background-size: cover;
+      color: #000000; /* Set text color to black against the background */
+      padding: 20px;
+    }
+
+    h1 {
+      color: #17a2b8; /* Bootstrap primary color */
+    }
+
+    a.btn {
+      margin-top: 10px;
+    }
+
+    .card {
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    .card-body {
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    }
+
+    .btn-secondary {
+      background-color: #6c757d; /* Bootstrap secondary color */
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268; /* Darker shade on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tools</h1>
+
+    <!-- Add Tool button -->
+    <a href="/addTool" class="btn btn-primary">Add Tool</a>
+    <a href="/" class="btn btn-primary">Home</a>
+
+    <div class="card-columns">
+      <% tools.forEach(tool => { %>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Tool Name: <%= tool.toolname %></h5>
+            <p class="card-text">Tool Bar Code: <%= tool.toolBarCode %></p>
+            <p class="card-text">Tool Quantity: <%= tool.toolQuantity %></p>
+            <a href="/updateTool/<%= tool._id %>" class="btn btn-secondary">Update Tool</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

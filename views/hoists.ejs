@@ -1,0 +1,102 @@
+<!-- views/hoists.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoists</title>
+  <!-- Include Bootstrap from CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background: url('https://source.unsplash.com/1920x1080/?warehouse') center center fixed;
+      background-size: cover;
+      color: #000000;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #007bff;
+    }
+
+    a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .btn-secondary {
+      margin-top: 10px;
+    }
+
+    .add-button {
+      margin-top: 20px;
+    }
+
+    .add-form {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hoists</h1>
+
+    <!-- Redirect to Add Hoist route -->
+    <a href="/addHoist" class="add-button">Add Hoist</a>
+    <a href="/" class="add-button">Home</a>
+
+    <!-- Add Hoist form -->
+
+    <div class="row">
+      <% hoists.forEach(hoist => { %>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <strong>Name:</strong> <%= hoist.name %><br>
+              <strong>Machine Name:</strong> <%= hoist.machinename %><br>
+              <strong>Is Available:</strong> <%= hoist.isAvailable %><br>
+              <strong>Motar ID:</strong> <%= hoist.motarId %><br>
+              <strong>Panel ID:</strong> <%= hoist.pannelId %><br>
+              <a href="/updateHoist/<%= hoist._id %>" class="btn btn-secondary">Update Hoist</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+
+    <script>
+      // Optional: If you want to keep the toggle functionality
+      function toggleForm() {
+        const addForm = document.querySelector('.add-form');
+        addForm.style.display = addForm.style.display === 'none' ? 'block' : 'none';
+      }
+    </script>
+  </div>
+</body>
+</html>

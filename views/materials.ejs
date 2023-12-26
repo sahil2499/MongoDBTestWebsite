@@ -1,0 +1,83 @@
+<!-- views/materials.ejs -->
+<!-- views/materials.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materials</title>
+  <!-- Include Bootstrap from CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background: url('https://source.unsplash.com/1920x1080/?warehouse') center center fixed;
+      background-size: cover;
+      color: #ffffff; /* Set text color to white against the background */
+      padding: 20px;
+    }
+
+    h1 {
+      color: #007bff; /* Bootstrap primary color */
+    }
+
+    a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      background-color: #007bff; /* Bootstrap primary color */
+      color: #ffffff; /* White text color */
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #0056b3; /* Darker shade on hover */
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .btn-secondary {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Materials</h1>
+
+    <!-- Add Material button -->
+    <a href="/addMaterial" class="btn btn-primary">Add Material</a>
+    <a href="/" class="btn btn-primary">Home</a>
+
+    <div class="row">
+      <% materials.forEach(material => { %>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <strong>Name:</strong> <%= material.name %><br>
+              <strong>Quantity:</strong> <%= material.quantity %><br>
+              <strong>Location:</strong> <%= material.location %><br>
+              <a href="/updateMaterial/<%= material._id %>" class="btn btn-secondary">Update Material</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

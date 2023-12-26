@@ -1,0 +1,37 @@
+<!-- views/addTool.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Tool</title>
+  <!-- Include Bootstrap from CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add Tool</h1>
+
+    <!-- Add Tool form -->
+    <form action="/addTool" method="POST">
+      <div class="form-group">
+        <label for="toolname">Tool Name:</label>
+        <input type="text" id="toolname" name="toolname" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="toolBarCode">Tool Bar Code:</label>
+        <input type="text" id="toolBarCode" name="toolBarCode" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="toolQuantity">Tool Quantity:</label>
+        <input type="text" id="toolQuantity" name="toolQuantity" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <a href="/tools" class="btn btn-secondary">Back to Tools</a>
+  </div>
+</body>
+</html>

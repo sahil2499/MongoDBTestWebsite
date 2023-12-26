@@ -1,0 +1,45 @@
+<!-- views/addHoist.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Hoist</title>
+  <!-- Include Bootstrap from CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add Hoist</h1>
+
+    <!-- Add Hoist form -->
+    <form action="/addHoist" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="machinename">Machine Name:</label>
+        <input type="text" id="machinename" name="machinename" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="isAvailable">Is Available:</label>
+        <input type="text" id="isAvailable" name="isAvailable" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="motarId">Motar ID:</label>
+        <input type="text" id="motarId" name="motarId" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="pannelId">Panel ID:</label>
+        <input type="text" id="pannelId" name="pannelId" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <a href="/hoists" class="btn btn-secondary">Back to Hoists</a>
+  </div>
+</body>
+</html>
