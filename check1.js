@@ -46,7 +46,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/', async (req, res) => {
+app.get('https://sahil2499.github.io/', async (req, res) => {
   // Fetch hoists and tools from the database
   const hoists = await Hoist.find();
   const tools = await Tool.find();
